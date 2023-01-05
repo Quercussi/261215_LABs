@@ -40,31 +40,6 @@ void loop() {
   date  = ((buffer[4]>>4) & 0b11)*10 + (buffer[4] & 0b1111);
   month = ((buffer[5]>>4) & 0b1)*10 + (buffer[5] & 0b1111);
   year = ((buffer[6]>>4) & 0b1111)*10 + (buffer[6] & 0b1111) + 2000;
-
-  Serial.print(buffer[6], BIN);
-  Serial.print('/');
-  Serial.print(buffer[5], BIN);
-  Serial.print('/');
-  Serial.println(buffer[4], BIN);
-
-  Serial.print(buffer[2], BIN);
-  Serial.print(':');
-  Serial.print(buffer[1], BIN);
-  Serial.print(':');
-  Serial.println(buffer[0], BIN);
-
-  Serial.print(year, DEC);
-  Serial.print('/');
-  Serial.print(month, DEC);
-  Serial.print('/');
-  Serial.println(date, DEC);
-
-  Serial.print(hour, DEC);
-  Serial.print(':');
-  Serial.print(minute, DEC);
-  Serial.print(':');
-  Serial.println(second, DEC);
-
   
   lcd.setCursor(0, 0); // Or setting the cursor in the desired position.
   printDate();
